@@ -1,0 +1,48 @@
+<%= form_with(model: produto) do |form| %>
+  <% if produto.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+        <% produto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :modelo, style: "display: block" %>
+    <%= form.text_field :modelo, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :valor, style: "display: block" %>
+    <%= form.number_field :valor, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :peso, style: "display: block" %>
+    <%= form.number_field :peso, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :pedra, style: "display: block" %>
+    <%= form.text_field :pedra, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :metal, style: "display: block" %>
+    <%= form.text_field :metal, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :descricao, style: "display: block" %>
+    <%= form.text_area :descricao, :class => "form-control" %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit "Salvar", :class => "btn btn-success" %>
+    <%= link_to "Voltar", produtos_path, {:class => "btn btn-outline-info"} %>
+  </div>
+<% end %>

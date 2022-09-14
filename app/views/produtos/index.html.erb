@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="row mb-5">
+  <% @produtos.each do |produto| %>
+    <div class="col-md-3">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= produto.modelo %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= produto.metal %></h6>
+          <p class="card-text"><%= produto.valor %></p> 
+          <%= link_to "Ver detalhes", produto, {:class => "btn btn-outline-success"} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

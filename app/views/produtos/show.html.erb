@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @produto %>
+
+<div class="row mt-4">
+  <div class="col-4">
+    <ul class="list-group">
+      <div class="btn-group" role="group" aria-label="Exemplo básico">
+        <%= link_to "Voltar para produtos", produtos_path, {:class => "btn btn-outline-success"} %>
+        <%= link_to "Editar produto", edit_produto_path(@produto), {:class => "btn btn-outline-info"} %>
+      </div>
+    </ul>
+  </div>
+  <div class="col-2">
+    <ul class="list-group">
+        <%= button_to "Deletar", @produto, {:class => "btn btn-outline-danger", method: :delete} %>
+    </ul>
+  </div>
+</div>
+
+
+
+
